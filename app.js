@@ -1,6 +1,7 @@
 const workMinutes = 25;
 const shortBreakMinutes = 5;
 const longBreakMinutes = 15;
+const audio = new Audio("./alarm.mp3");
 
 let interval;
 let currentMinutes;
@@ -27,6 +28,7 @@ function startTimer(minutes) {
   interval = setInterval(function () {
     if (currentMinutes === 0 && currentSeconds === 0) {
       clearInterval(interval);
+      audio.play();
     }
 
     // Atualiza os segundos
@@ -45,7 +47,7 @@ function startTimer(minutes) {
 function setMode(mode, minutes) {
   currentMode = mode;
   currentMinutes = minutes;
-  currentSeconds = 0; 
+  currentSeconds = 0;
   showTimer();
 }
 
@@ -61,7 +63,6 @@ document.getElementById("start").addEventListener("click", function () {
 document.getElementById("pause").addEventListener("click", function () {
   clearInterval(interval);
 });
-
 
 // Botão reset
 document.getElementById("reset").addEventListener("click", function () {
