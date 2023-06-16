@@ -1,4 +1,4 @@
-const workMinutes = 1;
+const workMinutes = 25;
 const shortBreakMinutes = 5;
 const longBreakMinutes = 15;
 const audio = new Audio("./alarm.mp3");
