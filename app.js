@@ -1,4 +1,4 @@
-const workMinutes = 25;
+const workMinutes = 1;
 const shortBreakMinutes = 5;
 const longBreakMinutes = 15;
 const audio = new Audio("./alarm.mp3");
@@ -32,10 +32,10 @@ function startTimer(minutes) {
     }
 
     // Atualiza os segundos
-    if (currentSeconds === 0) {
+    if (currentSeconds === 0 && currentMinutes > 0) {
       currentMinutes--;
       currentSeconds = 59;
-    } else {
+    } else if (currentSeconds > 0) {
       currentSeconds--;
     }
 
